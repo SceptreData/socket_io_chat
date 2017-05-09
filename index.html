@@ -14,26 +14,30 @@
     </style>
   </head>
   <body>
+    <ul class="pages">
+        <li class="user_login">
+            <div class="form">
+                <h3 class="prompt">Enter Username:</h3>
+                <input class="name_input" type="text" maxlength="14"/>
+            </div>
+        </li>
+
+        <li class="chatroom">
+            <div class="chatbox">
+                <ul class="msg_list"></ul>
+            </div>
+            <input class="msg_input" placeholder="Type here..."/>
+        </li>
+    </ul>
+<!--
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      $(function () {
-        var socket = io();
-
-        $('form').submit(function(){
-          socket.emit('chat_msg', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-
-        socket.on('chat_msg', function(msg) {
-            $('#messages').append($('<li>').text(msg));
-        });
-      });
+-->
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+      <script src="/chat.js"></script>
     </script>
   </body>
 </html>
